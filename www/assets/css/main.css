@@ -82,9 +82,7 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
-		background: #2e3842;
-	}
+
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -136,7 +134,6 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
 		transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		border-bottom: dotted 1px;
 		color: inherit;
 		text-decoration: none;
 	}
@@ -2848,6 +2845,20 @@ input, select, textarea {
 				border-color: rgba(0, 0, 0, 0.125);
 			}
 
+
+
+			.personapic {
+				width: 30%;
+				aspect-ratio: 1/1;
+				margin-top: 1%;
+				margin-left: -10%;
+				margin-right: 15%;
+				border-radius: 50%;
+				float: left;
+				border: 5px solid #16425B;
+			  }
+
+			  
 			/* qualities text color */
 			.wrapper.style1 header.major p {
 				color: #16425B;
@@ -3972,10 +3983,10 @@ color: lightskyblue;
 	
 
 	 .grid-item {
-		border: 5px solid #16425B;
 		padding: 10px;
+		background-color: transparent;
 		text-align: center;
-		border-radius: 30px;
+		border-radius: 20px;
 		position: relative;
 		overflow: hidden;
 		aspect-ratio: 1 / 1;
@@ -3985,6 +3996,7 @@ color: lightskyblue;
 		width: 100%;
 		height: auto;
 		display: block;
+		border-radius: 20px;
 	  }
 
 	  .grid-gallery-item-content {
@@ -3999,9 +4011,12 @@ color: lightskyblue;
 	.grid-item img {
 		width: 100%;
 		height: 100%;
-		object-fit: contain;
+		object-fit: cover;
 		transition: opacity 0.3s ease;
+		transition: transform 0.3s ease-in-out;
 	}
+
+
 	
 	.overlay {
 		position: absolute;
@@ -4031,6 +4046,7 @@ color: lightskyblue;
 	/* Hover Effects */
 	.grid-item:hover img {
 		opacity: 0.2;
+		transform: scale(1.2);
 	}
 	
 	.grid-item:hover .overlay {
@@ -4111,6 +4127,52 @@ color: lightskyblue;
 			}
 
 		}
+
+
+/* project_page */
+#project_page  {
+	background-color: #ffffff;
+	color: #4E4852;
+}
+
+#project_page img {
+	display: flex;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	filter: drop-shadow(rgb(85, 82, 82) 1rem 1rem 20px)
+}
+
+.project_title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3em;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 2em;
+	padding-top: 10%;
+}
+
+.project_description {
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+  margin-top: 5%;
+}
+
+.icon_cross {
+	position: fixed;
+	top: 5%;
+	right: 5%;
+	transform: ;
+}
+
+.icon_cross :hover {
+	scale: 1.4;
+	color: lightskyblue;
+}
 
 /* Landing */
 
