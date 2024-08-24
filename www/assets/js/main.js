@@ -71,8 +71,8 @@
     const menuIcon = document.querySelector('.menu-icon');
 
     // Store the paths to the images
-    const whiteBars = "images/bars_white.png";
-    const lightSkyBlueBars = "images/bars_lsb.png";
+    const whiteBars = "../images/bars_white.png";
+    const lightSkyBlueBars = "../images/bars_lsb.png";
 
     // Event listeners for mouse enter and leave
     menuToggle.addEventListener('mouseenter', function() {
