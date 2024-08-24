@@ -186,7 +186,8 @@ input, select, textarea {
 
 		}
 
-	h3 {
+	.h3 {
+		font-family: 'Courier New', Courier, monospace;
 		font-size: 1.15em;
 		line-height: 1.75em;
 	}
@@ -2074,15 +2075,15 @@ input, select, textarea {
 			}
 
 		.icon.style1 {
-			color: #00ffcc;
+			color: #16425B;
 		}
 
 		.icon.style2 {
-			color: #00f0ff;
+			color: #16425B;
 		}
 
 		.icon.style3 {
-			color: #76ddff;
+			color: #16425B;
 		}
 
 /* Image */
@@ -2815,8 +2816,8 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
-			color: #c8ece9;
+			background-color: #D9DCD6;
+			color: #16425B;
 		}
 
 			.wrapper.style1 strong, .wrapper.style1 b {
@@ -2824,7 +2825,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6 {
-				color: #ffffff;
+				color: #16425B;
 			}
 
 			.wrapper.style1 hr {
@@ -2840,15 +2841,16 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header p {
-				color: #a6e0db;
+				color: #16425B;
 			}
 
 			.wrapper.style1 header.major h2, .wrapper.style1 header.major h3, .wrapper.style1 header.major h4, .wrapper.style1 header.major h5, .wrapper.style1 header.major h6 {
 				border-color: rgba(0, 0, 0, 0.125);
 			}
 
+			/* qualities text color */
 			.wrapper.style1 header.major p {
-				color: #c8ece9;
+				color: #16425B;
 			}
 
 			.wrapper.style1 label {
@@ -2974,7 +2976,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background-color: #2e3842;
+			background-color: #2F6690;
 		}
 
 		.wrapper.style3 {
@@ -3443,7 +3445,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: #2e3842;
+		background: #16425B;
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -3886,7 +3888,7 @@ color: lightskyblue;
 
 	#Project_background > header {
 		padding: 6em 0 10em 0 ;
-		background-color: #141949;
+		background-color: #D9DCD6;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -3899,14 +3901,14 @@ color: lightskyblue;
 		}
 
 		#Project_background > header h2 {
-			color: inherit;
+			color: #16425B;
 			letter-spacing: 0.225em;
 			text-transform: uppercase;
 			top: 0;
 		}
 
-			#Project_background > header p a {
-				color: inherit;
+			#Project_background > header p {
+				color: #16425B;
 			}
 
 		@media screen and (max-width: 1680px) {
@@ -3970,10 +3972,10 @@ color: lightskyblue;
 	
 
 	 .grid-item {
-		border: 1px solid #ccc;
+		border: 5px solid #16425B;
 		padding: 10px;
 		text-align: center;
-		border-radius: 8px;
+		border-radius: 30px;
 		position: relative;
 		overflow: hidden;
 		aspect-ratio: 1 / 1;
@@ -3991,7 +3993,7 @@ color: lightskyblue;
 		width: 100%;
 		height: 100%;
 		text-decoration: none;
-		color: white;
+		color: white
 	}
 	
 	.grid-item img {
@@ -4014,6 +4016,7 @@ color: lightskyblue;
 	.title, .subtitle {
 		margin: 0;
 		padding: 0;
+		color: #16425B;
 	}
 	
 	.title {
