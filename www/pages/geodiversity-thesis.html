@@ -1,33 +1,364 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Geodiversity-thesis</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="website icon" type="png" href="../images/logo_mk.jpg">
-	</head>
-	<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Geodiversity Thesis</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="icon" type="image/png" href="../images/logo_mk.jpg">
 
-				<!-- Main -->
-					<section id="project_page">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-                        <div class="project_title">
-                            <p>Geodiversity thesis</p>
-                        </div>
+        /* Set the entire page background to white */
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
 
-                            <img src="../images/Levels_345_3d.png" alt="Image 3" class="project_image" style="width: 60%; height: auto;"> 
+        /* Centering and padding for main content */
+        #project_page {
+            width: 100%;
+            max-width: 1200px; /* Increased max-width for desktop */
+            padding: 20px;
+            margin: 20px auto;
+            text-align: center;
+            position: relative; /* Needed for the X icon positioning */
+        }
 
-                        <div class="project_description">
-                            <p>My thesis was about geodiversity in the Netherlands. I used ArcGIS Pro to create a 3D model of the Netherlands and used the 3D analyst tool to calculate the geodiversity of the Netherlands. The geodiversity was calculated using the levels 3, 4 and 5 of the geodiversity model. The geodiversity model was created by the Dutch Geological Survey (TNO). The model is based on the geological composition of the Netherlands. The levels 3, 4 and 5 are the most detailed levels of the model
-                            </p>
+        .project_title {
+            font-size: 32px; /* Increased font size */
+            font-weight: bold;
+            margin-bottom: 3em;
+        }
 
-                            <a href="../pages/Projects.html#Project_background" class="icon_cross"> <ion-icon name="close-outline" size="large"></ion-icon></a>
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 80vh;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* Ensure the image fits within the modal */
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10000; /* Ensure the close button is on top */
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
 
-                    </section>
+
+        .slideshow-container {
+            max-width: 100%;
+            height: auto; 
+            position: relative;
+            margin: auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /* Disable right-click on images */
+.slideshow-container img {
+    pointer-events: none; /* Disable interactions */
+}
 
 
-                    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-                    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-	</body>
+        .slides {
+            display: block;
+            width: 100%;
+            height: 200%;
+            overflow: hidden;
+        }
+
+        .slides img {
+            max-width: 100%; /* Ensure image width does not exceed container width */
+            object-fit: contain; /* Ensure the entire image is visible */
+            display: block;
+        }
+
+
+        .caption_slideshow {
+            color: #f2f2f2;
+            font-size: 18px; /* Slightly increased caption font size */
+            padding: 10px 15px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /* Center the arrows vertically */
+            padding: 16px;
+            color: #16425B
+            font-weight: bold;
+            font-size: 24px; /* Increased arrow size */
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            transition: 0.6s ease;
+        }
+
+        .prev {
+            left: 0; /* Align the prev arrow to the left edge */
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0; /* Align the next arrow to the right edge */
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            color: #ccc; /* Change arrow color on hover */
+        }
+
+        .dot-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .project_description {
+            margin-top: 30px; /* Keep the margin for spacing */
+            font-size: 18px; /* Font size remains the same */
+            line-height: 1.8;
+            text-align: justify;
+            width: 100%; /* Ensure the description takes the full width */
+            padding: 0; /* Remove padding to match the slideshow's width */
+        }
+        
+
+        .icon_cross {
+            position: fixed;
+            top: 5em; /* Adjust the top position as needed */
+            right: 25em; /* Adjust the right position as needed */
+            z-index: 1000; /* Ensure it stays on top of other elements */
+            color: black; /* Adjust color to make it visible */
+        }
+
+        .icon_cross:hover {
+            color: lightskyblue;
+            scale: 1.2;
+        }
+
+        /* Responsive adjustments */
+        @media only screen and (max-width: 768px) { /* Tablet */
+            #project_page {
+                max-width: 90%;
+            }
+
+            .project_description {
+                margin: 0 0 0 0px;
+            }
+
+            .project_title {
+                font-size: 28px;
+            }
+
+            .prev, .next {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .icon_cross {
+                top: 10px; /* Slightly adjust for smaller screens */
+                right: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) { /* Mobile */
+            .project_title {
+                font-size: 24px;
+            }
+
+            .slideshow-container {
+                height: 400px; /* Adjusted for smaller screens */
+            }
+
+            .project_description {
+                padding: 0 15px;
+            }
+
+            .prev, .next {
+                font-size: 16px;
+            }
+
+            .caption_slideshow {
+                font-size: 14px;
+            }
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+
+<section id="project_page">
+
+    <!-- Project Title -->
+    <div class="project_title">
+        Geodiversity Thesis
+    </div>
+
+    <!-- Close (X) Icon -->
+    <a href="../pages/Projects.html#Project_background" class="icon_cross">
+        <ion-icon name="close-outline" size="large"></ion-icon>
+    </a>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+
+        <!-- Slide 1 -->
+        <div class="slides fade">
+            <img src="../images/Levels_345_3d.png" alt="3D layers of hierarchical geodiversity map" class="project_image" style="padding-bottom: 5%;">
+            <div class="caption_slideshow">3D layers of hierarchical geodiversity map</div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slides fade">
+            <img src="../images/Dunes_T_V2_geodiv_map_page-0001.jpg" alt="Layout of hierarchical geodiversity map for Dune area" class="project_image" style="padding-bottom: 8%;">
+            <div class="caption_slideshow">Layout of hierarchical geodiversity map for Dune area</div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slides fade">
+            <img src="../images/Dunes_3d_legend.png" alt="3D terrain model of Dune research area" class="project_image">
+            <div class="caption_slideshow">3D terrain model of Dune research area</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    
+
+    <!-- Dots/indicators -->
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- Project Description -->
+    <div class="project_description">
+        <p>My thesis was about geodiversity in the Netherlands. I used ArcGIS Pro to create a 3D model of the Netherlands and used the 3D analyst tool to calculate the geodiversity of the Netherlands. The geodiversity was calculated using the levels 3, 4, and 5 of the geodiversity model. The geodiversity model was created by the Dutch Geological Survey (TNO). The model is based on the geological composition of the Netherlands. The levels 3, 4, and 5 are the most detailed levels of the model.</p>
+    </div>
+
+</section>
+
+<!-- Include Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<!-- Slideshow Script -->
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
+<!--- Disable drag and drop images --> 
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        const images = document.querySelectorAll('.slideshow-container img');
+        images.forEach(img => {
+            img.addEventListener('dragstart', (e) => {
+                e.preventDefault(); // Prevent dragging
+            });
+        });
+    });
+</script>
+
+<!-- Disable right-click on images -->
+
+<script>
+    document.addEventListener('contextmenu', (event) => {
+        if (event.target.tagName === 'IMG') {
+            event.preventDefault(); // Prevent right-click on images
+        }
+    });
+</script>
+
+
+
+</body>
 </html>

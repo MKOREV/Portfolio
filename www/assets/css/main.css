@@ -2848,7 +2848,8 @@ input, select, textarea {
 
 
 			.personapic {
-				width: 30%;
+				object-fit: cover;
+				width: 25%;
 				aspect-ratio: 1/1;
 				margin-top: 1%;
 				margin-left: -10%;
@@ -2857,6 +2858,33 @@ input, select, textarea {
 				float: left;
 				border: 5px solid #16425B;
 			  }
+
+			  @media screen and (max-width: 1200px) {
+				.personapic { 
+					object-fit: cover;
+					width: 30%;
+					float: center;
+					margin-left:36%;
+					margin-right: 25%;
+					margin-bottom: 15%;
+					margin-top: 5%;
+				}
+		
+				}
+
+			  @media screen and (max-width: 736px) {
+				.personapic { 
+					object-fit: cover;
+					width: 30%;
+					float: center;
+					margin-left: 35%;
+					margin-right: 25%;
+					margin-bottom: 15%;
+					margin-top: 5%;
+				}
+		
+				}
+		
 
 			  
 			/* qualities text color */
@@ -3729,6 +3757,7 @@ color: lightskyblue;
 					font-size: 1.25em;
 				}
 
+
 				#banner br {
 					display: none;
 				}
@@ -4027,6 +4056,7 @@ color: lightskyblue;
 		opacity: 0;
 		transition: opacity 0.3s ease;
 	}
+
 	
 	.title, .subtitle {
 		margin: 0;
@@ -4035,11 +4065,11 @@ color: lightskyblue;
 	}
 	
 	.title {
-		font-size: 24px;
+		font-size: 20px;
 	}
 	
 	.subtitle {
-		font-size: 16px;
+		font-size: 14px;
 		text-transform: lowercase;
 	}
 	
@@ -4152,7 +4182,14 @@ color: lightskyblue;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 2em;
-	padding-top: 10%;
+	padding-top: 12%;
+}
+
+@media screen and (max-width: 736px) {
+	.project_title {
+		font-size: 1em;
+	}
+	
 }
 
 .project_description {
@@ -4173,6 +4210,8 @@ color: lightskyblue;
 	scale: 1.4;
 	color: lightskyblue;
 }
+
+
 
 /* Landing */
 
